@@ -1,0 +1,4 @@
+skip_scopes:
+  - FastRoute\cachedDispatcher
+  - Composer\InstalledVersions
+  - Composer\Autoload\ClassLoader
