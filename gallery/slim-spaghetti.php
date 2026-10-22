@@ -5984,7 +5984,7 @@ $route[$_stack_level] = current($_iter_array[$_stack_level]);
 next($_iter_array[$_stack_level]);
 $regex[$_stack_level] = $_method_FastRoute__NS__DataGenerator__NS__CharCountBased_processChunk_tmp15[$_stack_level];
 $suffixLen[$_stack_level]++;
-$suffix[$_stack_level] = $suffix[$_stack_level] . '	';
+$suffix[$_stack_level] = $suffix[$_stack_level] . "\t";
 $_ts_cond = is_int('(?:') && isset($_objects['(?:']) && isset($_spaghetti_tostring[$_objects['(?:']['__class']]);
 if ($_ts_cond) goto method_FastRoute__NS__DataGenerator__NS__CharCountBased_processChunk_14_ts0_call;
 goto method_FastRoute__NS__DataGenerator__NS__CharCountBased_processChunk_14_ts0_fb;
@@ -7380,18 +7380,7 @@ if (!$_method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCaptu
 $_return_value = false;
 goto __return_dispatcher;
 method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_0011:
-$_method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_tmp3[$_stack_level] = preg_match("~
-                (?:
-                    \\(\\?\\(
-                  | \\[ [^\\]\\\\]* (?: \\\\ . [^\\]\\\\]* )* \\]
-                  | \\\\ .
-                ) (*SKIP)(*FAIL) |
-                \\(
-                (?!
-                    \\? (?! <(?![!=]) | P< | ' )
-                  | \\*
-                )
-            ~x", $_param_method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_regex[$_stack_level]);
+$_method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_tmp3[$_stack_level] = preg_match("~\n                (?:\n                    \\(\\?\\(\n                  | \\[ [^\\]\\\\]* (?: \\\\ . [^\\]\\\\]* )* \\]\n                  | \\\\ .\n                ) (*SKIP)(*FAIL) |\n                \\(\n                (?!\n                    \\? (?! <(?![!=]) | P< | ' )\n                  | \\*\n                )\n            ~x", $_param_method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_regex[$_stack_level]);
 goto method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_0018;
 method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_0018: $_method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_tmp4[$_stack_level] = (bool)$_method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_tmp3[$_stack_level];
 $_return_value = $_method_FastRoute__NS__DataGenerator__NS__RegexBasedAbstract_regexHasCapturingGroups_tmp4[$_stack_level];
@@ -9939,23 +9928,13 @@ $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp10[$_stack_level] = strlen
 $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp11[$_stack_level] = strlen($routeWithoutClosingOptionals[$_stack_level]);
 $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp12[$_stack_level] = $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp10[$_stack_level] - $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp11[$_stack_level];
 $numOptionals[$_stack_level] = $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp12[$_stack_level];
-$_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp14[$_stack_level] = preg_split('~\\{
-    \\s* ([a-zA-Z_][a-zA-Z0-9_-]*) \\s*
-    (?:
-        : \\s* ([^{}]*(?:\\{(?-1)\\}[^{}]*)*)
-    )?
-\\}(*SKIP)(*F) | \\[~x', $routeWithoutClosingOptionals[$_stack_level]);
+$_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp14[$_stack_level] = preg_split("~\\{\n    \\s* ([a-zA-Z_][a-zA-Z0-9_-]*) \\s*\n    (?:\n        : \\s* ([^{}]*(?:\\{(?-1)\\}[^{}]*)*)\n    )?\n\\}(*SKIP)(*F) | \\[~x", $routeWithoutClosingOptionals[$_stack_level]);
 $segments[$_stack_level] = $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp14[$_stack_level];
 $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp16[$_stack_level] = count($segments[$_stack_level]);
 $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp17[$_stack_level] = $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp16[$_stack_level] - 1;
 $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp18[$_stack_level] = $numOptionals[$_stack_level] !== $_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp17[$_stack_level];
 if (!$_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp18[$_stack_level]) goto method_FastRoute__NS__RouteParser__NS__Std_parse_0041;
-$_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp19[$_stack_level] = preg_match('~\\{
-    \\s* ([a-zA-Z_][a-zA-Z0-9_-]*) \\s*
-    (?:
-        : \\s* ([^{}]*(?:\\{(?-1)\\}[^{}]*)*)
-    )?
-\\}(*SKIP)(*F) | \\]~x', $routeWithoutClosingOptionals[$_stack_level]);
+$_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp19[$_stack_level] = preg_match("~\\{\n    \\s* ([a-zA-Z_][a-zA-Z0-9_-]*) \\s*\n    (?:\n        : \\s* ([^{}]*(?:\\{(?-1)\\}[^{}]*)*)\n    )?\n\\}(*SKIP)(*F) | \\]~x", $routeWithoutClosingOptionals[$_stack_level]);
 goto method_FastRoute__NS__RouteParser__NS__Std_parse_0032;
 method_FastRoute__NS__RouteParser__NS__Std_parse_0032: if (!$_method_FastRoute__NS__RouteParser__NS__Std_parse_tmp19[$_stack_level]) goto method_FastRoute__NS__RouteParser__NS__Std_parse_0037;
 /* NEW: builtin class (deferred to constructor) */
@@ -10040,12 +10019,7 @@ $_param_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_route[$_sta
 $_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp5[$_stack_level] = isset($_const['FastRoute\RouteParser\PREG_OFFSET_CAPTURE']) ? $_const['FastRoute\RouteParser\PREG_OFFSET_CAPTURE'] : constant('PREG_OFFSET_CAPTURE');
 $_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp6[$_stack_level] = isset($_const['FastRoute\RouteParser\PREG_SET_ORDER']) ? $_const['FastRoute\RouteParser\PREG_SET_ORDER'] : constant('PREG_SET_ORDER');
 $_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp7[$_stack_level] = $_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp5[$_stack_level] | $_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp6[$_stack_level];
-$_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp8[$_stack_level] = preg_match_all('~\\{
-    \\s* ([a-zA-Z_][a-zA-Z0-9_-]*) \\s*
-    (?:
-        : \\s* ([^{}]*(?:\\{(?-1)\\}[^{}]*)*)
-    )?
-\\}~x', $_param_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_route[$_stack_level], $matches[$_stack_level], $_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp7[$_stack_level]);
+$_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp8[$_stack_level] = preg_match_all("~\\{\n    \\s* ([a-zA-Z_][a-zA-Z0-9_-]*) \\s*\n    (?:\n        : \\s* ([^{}]*(?:\\{(?-1)\\}[^{}]*)*)\n    )?\n\\}~x", $_param_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_route[$_stack_level], $matches[$_stack_level], $_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp7[$_stack_level]);
 $_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp9[$_stack_level] = !$_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp8[$_stack_level];
 if (!$_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp9[$_stack_level]) goto method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_0014;
 $_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_tmp10[$_stack_level] = [$_param_method_FastRoute__NS__RouteParser__NS__Std_parsePlaceholders_route[$_stack_level]];
@@ -12977,7 +12951,7 @@ method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_ret_178: $_metho
 goto method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_23_ts0_done;
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_23_ts0_fb: $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp16[$_stack_level] = (string)__builtin_unwrap($_param_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_values[$_stack_level]);
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_23_ts0_done:
-$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp17[$_stack_level] = preg_match('@^[ 	!-~€-ÿ]*$@', $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp16[$_stack_level]);
+$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp17[$_stack_level] = preg_match("@^[ \t!-~€-ÿ]*\$@", $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp16[$_stack_level]);
 $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp18[$_stack_level] = $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp17[$_stack_level] !== 1;
 $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp13[$_stack_level] = (bool)$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp18[$_stack_level];
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_0027: if (!$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp13[$_stack_level]) goto method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_0032;
@@ -12997,7 +12971,7 @@ method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_ret_179: $_metho
 goto method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_32_ts1_done;
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_32_ts1_fb: $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp21[$_stack_level] = (string)__builtin_unwrap($_param_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_values[$_stack_level]);
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_32_ts1_done:
-$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp22[$_stack_level] = trim($_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp21[$_stack_level], ' 	');
+$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp22[$_stack_level] = trim($_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp21[$_stack_level], " \t");
 $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp23[$_stack_level] = [$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp22[$_stack_level]];
 $_return_value = $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp23[$_stack_level];
 goto __return_dispatcher;
@@ -13033,7 +13007,7 @@ method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_ret_180: $_metho
 goto method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_53_ts2_done;
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_53_ts2_fb: $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp33[$_stack_level] = (string)__builtin_unwrap($v[$_stack_level]);
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_53_ts2_done:
-$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp34[$_stack_level] = preg_match('@^[ 	!-~€-ÿ]*$@D', $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp33[$_stack_level]);
+$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp34[$_stack_level] = preg_match("@^[ \t!-~€-ÿ]*\$@D", $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp33[$_stack_level]);
 $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp35[$_stack_level] = $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp34[$_stack_level] !== 1;
 $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp30[$_stack_level] = (bool)$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp35[$_stack_level];
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_0057: if (!$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp30[$_stack_level]) goto method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_0062;
@@ -13053,7 +13027,7 @@ method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_ret_181: $_metho
 goto method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_62_ts3_done;
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_62_ts3_fb: $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp39[$_stack_level] = (string)__builtin_unwrap($v[$_stack_level]);
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_62_ts3_done:
-$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp40[$_stack_level] = trim($_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp39[$_stack_level], ' 	');
+$_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp40[$_stack_level] = trim($_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp39[$_stack_level], " \t");
 $returnValues[$_stack_level][] = $_method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_tmp40[$_stack_level];
 goto method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_0045;
 method_Nyholm__NS__Psr7__NS__MessageTrait_validateAndTrimHeader_0067:
@@ -22906,22 +22880,17 @@ method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_ret_4
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts0_done;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts0_fb: $_ts_left[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_tmp3[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts0_done:
-$_ts_cond = is_int('
-') && isset($_objects['
-']) && isset($_spaghetti_tostring[$_objects['
-']['__class']]);
+$_ts_cond = is_int("\n") && isset($_objects["\n"]) && isset($_spaghetti_tostring[$_objects["\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts1_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts1_fb;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts1_call:
-$_this[$_stack_level + 1] = '
-';
+$_this[$_stack_level + 1] = "\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_ret_409';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_ret_409: $_ts_right[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts1_done;
-method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts1_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap('
-');
+method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts1_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap("\n");
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_6_ts1_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_tmp4[$_stack_level] = $_ts_left[$_stack_level] . $_ts_right[$_stack_level];
 $text[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_tmp4[$_stack_level];
@@ -22936,9 +22905,7 @@ goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExc
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_ret_410: $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_tmp6[$_stack_level] = $_return_value;
 $text[$_stack_level] = $text[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_tmp6[$_stack_level];
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_0019;
-method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_0014: $text[$_stack_level] = $text[$_stack_level] . '
-Previous Error:
-';
+method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_0014: $text[$_stack_level] = $text[$_stack_level] . "\nPrevious Error:\n";
 $_arg_0[$_stack_level + 1] = $_param_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_exception[$_stack_level];
 $_args_array[$_stack_level + 1] = [$_param_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer___invoke_exception[$_stack_level]];
 $_this[$_stack_level + 1] = $_this[$_stack_level];
@@ -23018,22 +22985,17 @@ goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExc
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_3_ts1_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp3[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_3_ts1_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp5[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp5[$_stack_level] . $_ts_rope_val[$_stack_level];
-$_ts_cond = is_int('
-') && isset($_objects['
-']) && isset($_spaghetti_tostring[$_objects['
-']['__class']]);
+$_ts_cond = is_int("\n") && isset($_objects["\n"]) && isset($_spaghetti_tostring[$_objects["\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_4_ts2_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_4_ts2_fb;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_4_ts2_call:
-$_this[$_stack_level + 1] = '
-';
+$_this[$_stack_level + 1] = "\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_414';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_414: $_ts_rope_val[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_4_ts2_done;
-method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_4_ts2_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap('
-');
+method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_4_ts2_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap("\n");
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_4_ts2_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp4[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp5[$_stack_level] . $_ts_rope_val[$_stack_level];
 $text[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp4[$_stack_level];
@@ -23071,22 +23033,17 @@ goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExc
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_10_ts4_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap($code[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_10_ts4_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp11[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp11[$_stack_level] . $_ts_rope_val[$_stack_level];
-$_ts_cond = is_int('
-') && isset($_objects['
-']) && isset($_spaghetti_tostring[$_objects['
-']['__class']]);
+$_ts_cond = is_int("\n") && isset($_objects["\n"]) && isset($_spaghetti_tostring[$_objects["\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_11_ts5_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_11_ts5_fb;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_11_ts5_call:
-$_this[$_stack_level + 1] = '
-';
+$_this[$_stack_level + 1] = "\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_417';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_417: $_ts_rope_val[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_11_ts5_done;
-method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_11_ts5_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap('
-');
+method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_11_ts5_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap("\n");
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_11_ts5_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp10[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp11[$_stack_level] . $_ts_rope_val[$_stack_level];
 $text[$_stack_level] = $text[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp10[$_stack_level];
@@ -23123,22 +23080,17 @@ goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExc
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_16_ts7_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp14[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_16_ts7_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp16[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp16[$_stack_level] . $_ts_rope_val[$_stack_level];
-$_ts_cond = is_int('
-') && isset($_objects['
-']) && isset($_spaghetti_tostring[$_objects['
-']['__class']]);
+$_ts_cond = is_int("\n") && isset($_objects["\n"]) && isset($_spaghetti_tostring[$_objects["\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_17_ts8_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_17_ts8_fb;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_17_ts8_call:
-$_this[$_stack_level + 1] = '
-';
+$_this[$_stack_level + 1] = "\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_420';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_420: $_ts_rope_val[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_17_ts8_done;
-method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_17_ts8_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap('
-');
+method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_17_ts8_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap("\n");
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_17_ts8_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp15[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp16[$_stack_level] . $_ts_rope_val[$_stack_level];
 $text[$_stack_level] = $text[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp15[$_stack_level];
@@ -23175,22 +23127,17 @@ goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExc
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_22_ts10_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp19[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_22_ts10_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp21[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp21[$_stack_level] . $_ts_rope_val[$_stack_level];
-$_ts_cond = is_int('
-') && isset($_objects['
-']) && isset($_spaghetti_tostring[$_objects['
-']['__class']]);
+$_ts_cond = is_int("\n") && isset($_objects["\n"]) && isset($_spaghetti_tostring[$_objects["\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_23_ts11_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_23_ts11_fb;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_23_ts11_call:
-$_this[$_stack_level + 1] = '
-';
+$_this[$_stack_level + 1] = "\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_423';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_423: $_ts_rope_val[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_23_ts11_done;
-method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_23_ts11_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap('
-');
+method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_23_ts11_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap("\n");
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_23_ts11_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp20[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp21[$_stack_level] . $_ts_rope_val[$_stack_level];
 $text[$_stack_level] = $text[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp20[$_stack_level];
@@ -23227,22 +23174,17 @@ goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExc
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_28_ts13_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp24[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_28_ts13_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp26[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp26[$_stack_level] . $_ts_rope_val[$_stack_level];
-$_ts_cond = is_int('
-') && isset($_objects['
-']) && isset($_spaghetti_tostring[$_objects['
-']['__class']]);
+$_ts_cond = is_int("\n") && isset($_objects["\n"]) && isset($_spaghetti_tostring[$_objects["\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_29_ts14_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_29_ts14_fb;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_29_ts14_call:
-$_this[$_stack_level + 1] = '
-';
+$_this[$_stack_level + 1] = "\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_426';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_ret_426: $_ts_rope_val[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_29_ts14_done;
-method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_29_ts14_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap('
-');
+method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_29_ts14_fb: $_ts_rope_val[$_stack_level] = (string)__builtin_unwrap("\n");
 method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_29_ts14_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp25[$_stack_level] = $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp26[$_stack_level] . $_ts_rope_val[$_stack_level];
 $text[$_stack_level] = $text[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__PlainTextErrorRenderer_formatExceptionFragment_tmp25[$_stack_level];
@@ -23310,22 +23252,17 @@ $_called_class[$_stack_level + 1] = 'Slim\Error\Renderers\XmlErrorRenderer';
 $_stack_level++;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer_createCdataSection;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_430: $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp5[$_stack_level] = $_return_value;
-$_ts_cond = is_int('
-  <message>') && isset($_objects['
-  <message>']) && isset($_spaghetti_tostring[$_objects['
-  <message>']['__class']]);
+$_ts_cond = is_int("\n  <message>") && isset($_objects["\n  <message>"]) && isset($_spaghetti_tostring[$_objects["\n  <message>"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_9_ts0_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_9_ts0_fb;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_9_ts0_call:
-$_this[$_stack_level + 1] = '
-  <message>';
+$_this[$_stack_level + 1] = "\n  <message>";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_431';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_431: $_ts_left[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_9_ts0_done;
-method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_9_ts0_fb: $_ts_left[$_stack_level] = (string)__builtin_unwrap('
-  <message>');
+method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_9_ts0_fb: $_ts_left[$_stack_level] = (string)__builtin_unwrap("\n  <message>");
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_9_ts0_done:
 $_ts_cond = is_int($_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp5[$_stack_level]) && isset($_objects[$_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp5[$_stack_level]]) && isset($_spaghetti_tostring[$_objects[$_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp5[$_stack_level]]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_9_ts1_call;
@@ -23352,28 +23289,22 @@ method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_433: $_
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts2_done;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts2_fb: $_ts_left[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp6[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts2_done:
-$_ts_cond = is_int('</message>
-') && isset($_objects['</message>
-']) && isset($_spaghetti_tostring[$_objects['</message>
-']['__class']]);
+$_ts_cond = is_int("</message>\n") && isset($_objects["</message>\n"]) && isset($_spaghetti_tostring[$_objects["</message>\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts3_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts3_fb;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts3_call:
-$_this[$_stack_level + 1] = '</message>
-';
+$_this[$_stack_level + 1] = "</message>\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_434';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_434: $_ts_right[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts3_done;
-method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts3_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap('</message>
-');
+method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts3_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap("</message>\n");
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_10_ts3_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp7[$_stack_level] = $_ts_left[$_stack_level] . $_ts_right[$_stack_level];
 $xml[$_stack_level] = $xml[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp7[$_stack_level];
 if (!$_param_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_displayErrorDetails[$_stack_level]) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_0046;
-method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_0013: $xml[$_stack_level] = $xml[$_stack_level] . '  <exception>
-';
+method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_0013: $xml[$_stack_level] = $xml[$_stack_level] . "  <exception>\n";
 $_is_ffi = is_int($_param_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_exception[$_stack_level]) && (($_param_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_exception[$_stack_level] >> _BUILTIN_TAG_BIT) & 1) === 1;
 if ($_is_ffi) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_0014_get_class_builtin;
 $_is_spaghetti_obj = is_array($_param_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_exception[$_stack_level]) && isset($_param_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_exception[$_stack_level]['__class']);
@@ -23421,22 +23352,17 @@ method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_437: $_
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts6_done;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts6_fb: $_ts_left[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp11[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts6_done:
-$_ts_cond = is_int('</type>
-') && isset($_objects['</type>
-']) && isset($_spaghetti_tostring[$_objects['</type>
-']['__class']]);
+$_ts_cond = is_int("</type>\n") && isset($_objects["</type>\n"]) && isset($_spaghetti_tostring[$_objects["</type>\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts7_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts7_fb;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts7_call:
-$_this[$_stack_level + 1] = '</type>
-';
+$_this[$_stack_level + 1] = "</type>\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_438';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_438: $_ts_right[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts7_done;
-method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts7_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap('</type>
-');
+method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts7_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap("</type>\n");
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_16_ts7_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp12[$_stack_level] = $_ts_left[$_stack_level] . $_ts_right[$_stack_level];
 $xml[$_stack_level] = $xml[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp12[$_stack_level];
@@ -23484,22 +23410,17 @@ method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_441: $_
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts10_done;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts10_fb: $_ts_left[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp15[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts10_done:
-$_ts_cond = is_int('</code>
-') && isset($_objects['</code>
-']) && isset($_spaghetti_tostring[$_objects['</code>
-']['__class']]);
+$_ts_cond = is_int("</code>\n") && isset($_objects["</code>\n"]) && isset($_spaghetti_tostring[$_objects["</code>\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts11_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts11_fb;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts11_call:
-$_this[$_stack_level + 1] = '</code>
-';
+$_this[$_stack_level + 1] = "</code>\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_442';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_442: $_ts_right[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts11_done;
-method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts11_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap('</code>
-');
+method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts11_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap("</code>\n");
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_21_ts11_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp16[$_stack_level] = $_ts_left[$_stack_level] . $_ts_right[$_stack_level];
 $xml[$_stack_level] = $xml[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp16[$_stack_level];
@@ -23555,22 +23476,17 @@ method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_446: $_
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts14_done;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts14_fb: $_ts_left[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp20[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts14_done:
-$_ts_cond = is_int('</message>
-') && isset($_objects['</message>
-']) && isset($_spaghetti_tostring[$_objects['</message>
-']['__class']]);
+$_ts_cond = is_int("</message>\n") && isset($_objects["</message>\n"]) && isset($_spaghetti_tostring[$_objects["</message>\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts15_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts15_fb;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts15_call:
-$_this[$_stack_level + 1] = '</message>
-';
+$_this[$_stack_level + 1] = "</message>\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_447';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_447: $_ts_right[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts15_done;
-method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts15_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap('</message>
-');
+method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts15_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap("</message>\n");
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_29_ts15_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp21[$_stack_level] = $_ts_left[$_stack_level] . $_ts_right[$_stack_level];
 $xml[$_stack_level] = $xml[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp21[$_stack_level];
@@ -23618,22 +23534,17 @@ method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_450: $_
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts18_done;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts18_fb: $_ts_left[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp24[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts18_done:
-$_ts_cond = is_int('</file>
-') && isset($_objects['</file>
-']) && isset($_spaghetti_tostring[$_objects['</file>
-']['__class']]);
+$_ts_cond = is_int("</file>\n") && isset($_objects["</file>\n"]) && isset($_spaghetti_tostring[$_objects["</file>\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts19_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts19_fb;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts19_call:
-$_this[$_stack_level + 1] = '</file>
-';
+$_this[$_stack_level + 1] = "</file>\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_451';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_451: $_ts_right[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts19_done;
-method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts19_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap('</file>
-');
+method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts19_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap("</file>\n");
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_34_ts19_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp25[$_stack_level] = $_ts_left[$_stack_level] . $_ts_right[$_stack_level];
 $xml[$_stack_level] = $xml[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp25[$_stack_level];
@@ -23681,27 +23592,21 @@ method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_454: $_
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts22_done;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts22_fb: $_ts_left[$_stack_level] = (string)__builtin_unwrap($_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp28[$_stack_level]);
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts22_done:
-$_ts_cond = is_int('</line>
-') && isset($_objects['</line>
-']) && isset($_spaghetti_tostring[$_objects['</line>
-']['__class']]);
+$_ts_cond = is_int("</line>\n") && isset($_objects["</line>\n"]) && isset($_spaghetti_tostring[$_objects["</line>\n"]['__class']]);
 if ($_ts_cond) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts23_call;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts23_fb;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts23_call:
-$_this[$_stack_level + 1] = '</line>
-';
+$_this[$_stack_level + 1] = "</line>\n";
 $_stack_level++;
 $_return_address[$_stack_level] = 'method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_455';
 goto __tostring_dispatch;
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_ret_455: $_ts_right[$_stack_level] = $_return_value;
 goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts23_done;
-method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts23_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap('</line>
-');
+method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts23_fb: $_ts_right[$_stack_level] = (string)__builtin_unwrap("</line>\n");
 method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_39_ts23_done:
 $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp29[$_stack_level] = $_ts_left[$_stack_level] . $_ts_right[$_stack_level];
 $xml[$_stack_level] = $xml[$_stack_level] . $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp29[$_stack_level];
-$xml[$_stack_level] = $xml[$_stack_level] . '  </exception>
-';
+$xml[$_stack_level] = $xml[$_stack_level] . "  </exception>\n";
 $_is_ffi = is_int($_param_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_exception[$_stack_level]) && $_param_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_exception[$_stack_level] > 0 && (($_param_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_exception[$_stack_level] >> _BUILTIN_TAG_BIT) & 1) === 1;
 if (!$_is_ffi) goto method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_0043_runtime_error;
 $_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_tmp32[$_stack_level] = __builtin_call($_param_method_Slim__NS__Error__NS__Renderers__NS__XmlErrorRenderer___invoke_exception[$_stack_level], 'getPrevious', []);
@@ -29039,8 +28944,7 @@ $_method_Slim__NS__Handlers__NS__ErrorHandler_writeToErrorLog_tmp12[$_stack_leve
 $_method_Slim__NS__Handlers__NS__ErrorHandler_writeToErrorLog_tmp13[$_stack_level] = !$_method_Slim__NS__Handlers__NS__ErrorHandler_writeToErrorLog_tmp12[$_stack_level];
 $_method_Slim__NS__Handlers__NS__ErrorHandler_writeToErrorLog_tmp11[$_stack_level] = (bool)$_method_Slim__NS__Handlers__NS__ErrorHandler_writeToErrorLog_tmp13[$_stack_level];
 method_Slim__NS__Handlers__NS__ErrorHandler_writeToErrorLog_0022: if (!$_method_Slim__NS__Handlers__NS__ErrorHandler_writeToErrorLog_tmp11[$_stack_level]) goto method_Slim__NS__Handlers__NS__ErrorHandler_writeToErrorLog_0025;
-$error[$_stack_level] = $error[$_stack_level] . '
-Tips: To display error details in HTTP response ';
+$error[$_stack_level] = $error[$_stack_level] . "\nTips: To display error details in HTTP response ";
 $error[$_stack_level] = $error[$_stack_level] . 'displayErrorDetails\\';
 method_Slim__NS__Handlers__NS__ErrorHandler_writeToErrorLog_0025:
 $_arg_1[$_stack_level + 1] = null;
